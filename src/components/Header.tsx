@@ -15,8 +15,8 @@ function Header() {
   const { bars, toggleBars } = useBars();
 
   return (
-    <div className="sticky top-0 bg-white z-10 shadow-md">
-      <div className="border shadow-md  flex justify-between w-full gap-3 panel">
+    <div className="sticky top-0 bg-white z-10">
+      <div className="border flex justify-between w-full gap-3 panel">
         <Logo />
         <div className="flex items-center p-4 md:hidden">
           {bars ? (
@@ -47,7 +47,7 @@ function Header() {
         </div>
       </div>
       <div
-        className={`absolute shadow-md top-[66px] z-10 w-full hidden ${bars && "active-bar"
+        className={`absolute top-[66px] z-10 w-full hidden ${bars && "active-bar"
           }`}
       >
         <div className="flex flex-col w-full text-gray-500 md:hidden">

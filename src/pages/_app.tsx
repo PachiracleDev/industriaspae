@@ -5,6 +5,7 @@ import { Banner } from "../components/Banner";
 import Footer from "../components/Footer";
 import type { AppProps } from "next/app";
 import { StoreProvider } from "../context/store";
+import Buscador from "../components/Buscador";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Banner>
 
       <Header />
+      <Buscador />
       <Component {...pageProps} />
       <Footer />
 
