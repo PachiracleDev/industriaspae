@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
+
+
 import { Banner } from "../components/Banner";
-import PortadaContacto from "../../public/contacto.jpg";
+
 import { BsFacebook, BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import OrdenIco from "../components/OrdenIco";
@@ -12,7 +12,7 @@ function contacto() {
       size="xl"
       title="Contacto"
       subtitle="Encantados en contactarnos"
-      image={PortadaContacto}
+      image="https://res.cloudinary.com/gongian/image/upload/v1660796243/imagenes/contacto_y4vdxh.jpg"
       imageAlt="Industria Pae"
       fullWidth={true}
       overlay={true}

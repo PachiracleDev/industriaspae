@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import NextLink from "next/link";
 
 import { FaBars, FaTiktok } from "react-icons/fa";
-import Buscador from "../components/Buscador";
+
 import { MdGroups } from "react-icons/md";
 import { ImList } from "react-icons/im";
 import { GrClose } from "react-icons/gr";

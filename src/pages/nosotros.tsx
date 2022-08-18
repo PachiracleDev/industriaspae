@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+
 import { Banner } from "../components/Banner";
-import PortadaNosotros from "../../public/nosotros1.jpg";
 import OrdenIco from "../components/OrdenIco";
 import Video from "../components/Video";
 
@@ -15,8 +14,8 @@ function nosotros() {
       size="xl"
       title="Nosotros"
       subtitle="Más de 20 años en el mercado"
-      image={PortadaNosotros}
-      imageAlt="New Collection - Spring/Summer 2021"
+      image="https://res.cloudinary.com/gongian/image/upload/v1660796243/imagenes/nosotros1_f3zait.jpg"
+      imageAlt="Industrias PAE"
       fullWidth={true}
       overlay={true}
       classNameTitle="text-3xl font-bold  tracking-wider leading-tight laptop:text-7xl"

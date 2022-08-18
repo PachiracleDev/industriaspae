@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, memo } from "react";
-import OrdenIcon from "../../public/icon.png";
+
 import Image from "next/image";
 import useModal from "../hooks/useModal";
 import OrdenList from "../components/OrdenList";
@@ -31,7 +31,7 @@ function OrdenIco() {
 
       <div className="relative">
         <Image
-          src={OrdenIcon}
+          src="https://res.cloudinary.com/gongian/image/upload/v1660796242/imagenes/icon_qjvd7l.png"
           className="w-6 h-6 absolute z-[1]"
           width="60"
           height="70"

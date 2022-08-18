@@ -1,6 +1,6 @@
 import React from "react";
 import { Banner } from "../components/Banner";
-import PortadaCatalogo from "../../public/portada-catalogo.jpg";
+
 
 function FilterHeader() {
   return (
@@ -9,8 +9,8 @@ function FilterHeader() {
         size="xl"
         title="Catálogo"
         subtitle="Ofreciendo la mejor calidad del mercado, al mejor precio"
-        image={PortadaCatalogo}
-        imageAlt="New Collection - Spring/Summer 2021"
+        image="https://res.cloudinary.com/gongian/image/upload/v1660796243/imagenes/portada-catalogo_wqohsl.jpg"
+        imageAlt="Arbolito de huayruro"
         fullWidth={true}
         overlay={true}
         classNameTitle="text-3xl font-bold  tracking-wider leading-tight laptop:text-7xl"

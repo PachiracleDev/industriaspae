@@ -5,7 +5,7 @@ import { Banner } from "../components/Banner";
 import Footer from "../components/Footer";
 import type { AppProps } from "next/app";
 import { StoreProvider } from "../context/store";
-import WhatsApp from "../components/WhatsApp";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
