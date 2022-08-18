@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import NextLink from "next/link";
+import { TiMinus } from "react-icons/ti";
 function FilterContainer() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [tamañosShow, setTamañosShow] = useState(false);
   const [ceramicasShow, setCeramicasShow] = useState(false);
   const [grutasShow, setGrutasShow] = useState(false);
+
 
   const showTamaños = () => {
     setTamañosShow(!tamañosShow);
@@ -17,27 +19,34 @@ function FilterContainer() {
     setGrutasShow(!grutasShow);
   };
 
+  const showCategory = () => {
+    setShow(!show);
+  }
+
   return (
     <>
       <div
         className="flex flex-col py-4 px-8 font-bold"
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="border">
-          <p className="text-md p-3 text-gray-700 flex gap-2 items-center justify-center ">
+        <button className="border" onClick={showCategory}>
+          <p className="text-md p-3 text-white bg-slate-700 flex gap-2 items-center justify-between ">
             Categorias
+            {show ? (<TiMinus className="w-4 h-4 first-letter:text-gray-400" />) : (<FiPlus className="w-4 h-4 text-gray-400" />)}
           </p>
+
         </button>
         <div
-          className={`flex-col border text-left flex font-bold w-full text-gray-600 `}
+          className={`flex-col hidden border-b text-left  font-bold w-full text-gray-600 ${show && "active-filter"}`}
         >
           <div className="flex flex-col gap-2 border  ">
             <button
-              className="flex justify-between  p-3 w-full items-center hover:bg-gray-100 duration-300"
+              className="flex justify-between p-3 w-full items-center hover:bg-gray-100 duration-300"
               onClick={showTamaños}
             >
               Bonsáis
-              <FiPlus className="w-4 h-4 text-gray-400" />
+              {tamañosShow ? (<TiMinus className="w-4 h-4 first-letter:text-gray-400" />) : (<FiPlus className="w-4 h-4 text-gray-400" />)}
+
             </button>
             <div
               className={`hidden flex-col ${tamañosShow && "active-filter"}`}
@@ -82,7 +91,7 @@ function FilterContainer() {
               onClick={showCeramicas}
             >
               Bonsáis con Animalito
-              <FiPlus className="w-4 h-4 text-gray-400" />
+              {ceramicasShow ? (<TiMinus className="w-4 h-4 first-letter:text-gray-400" />) : (<FiPlus className="w-4 h-4 text-gray-400" />)}
             </button>
             <div
               className={`hidden flex-col ${ceramicasShow && "active-filter"}`}
@@ -169,7 +178,7 @@ function FilterContainer() {
               onClick={showGrutas}
             >
               Grutas
-              <FiPlus className="w-4 h-4 text-gray-400" />
+              {grutasShow ? (<TiMinus className="w-4 h-4 first-letter:text-gray-400" />) : (<FiPlus className="w-4 h-4 text-gray-400" />)}
             </button>
             <div
               className={`hidden cursor-pointer flex-col ${grutasShow && "active-filter"

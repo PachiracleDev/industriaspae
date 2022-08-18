@@ -53,8 +53,8 @@ const OrdenList = ({ modal, toggle }: props) => {
         <GrClose className="w-8 h-8 text-gray-900  m-3" onClick={toggle} />
         <h2 className="text-2xl text-gray-700 text-center">Orden</h2>
 
-        <div className="flex w-11/12 mx-auto border shadow-md gap-3 flex-col min-h-[560px]">
-          <div className="min-h-[500px] max-h-[500px] overflow-y-auto flex flex-col gap-2 w-full p-1 shadow-md">
+        <div className="flex w-11/12 h-4/5 my-auto mx-auto border shadow-md gap-3 flex-col ">
+          <div className="h-full max-h-[400px] overflow-y-auto flex flex-col gap-2 w-full p-1 shadow-md">
             {cartItems.length === 0 ? (
               <div>
                 <h2 className="text-md text-gray-700 text-center p-4">
@@ -82,7 +82,7 @@ const OrdenList = ({ modal, toggle }: props) => {
 
             <button
               onClick={pushLink}
-              className="shadow-md shadow-green-700 bg-green-500 text-gray-50 text-sm p-2 rounded-full"
+              className="shadow-md shadow-green-700 my-4 bg-green-500 text-gray-50 text-sm p-2 rounded-full"
             >
               Tramitar Orden
             </button>

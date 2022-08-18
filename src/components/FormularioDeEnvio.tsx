@@ -2,14 +2,14 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
-import { StoreContext } from "../context/store";
+import { StoreContext, actionTypes } from "../context/store";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 
 function FormularioDeEnvio() {
 
-    const { state } = useContext(StoreContext);
+    const { state, dispatch } = useContext(StoreContext);
     const { cartItems } = state.cart;
 
     const SignupSchema = Yup.object().shape({
@@ -79,8 +79,10 @@ function FormularioDeEnvio() {
                         MySwal.fire({
                             icon: "success",
                             title: "Listo!",
-                            html: "<b>Orden Enviada</b>",
+                            html: "<p><b>Su orden ha sido enviada con exito.</b> Se le comunicara por WhatsApp para coordinar su envío.</p>",
                             confirmButtonColor: "#22c55e",
+                            allowEscapeKey: false,
+                            allowOutsideClick: false,
                             confirmButtonText: "Okey",
                         })
 
@@ -93,8 +95,12 @@ function FormularioDeEnvio() {
                                 cantidad: item.quantity,
                             }
                         })
+                        dispatch({
+                            type: actionTypes.CART_CLEAR,
+                        })
 
                         const response = await axios.post("./api/peticion", { datos: values, ordenFull: itemsResumidos })
+
                         console.log(response)
 
 

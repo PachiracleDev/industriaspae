@@ -24,7 +24,7 @@ function OrdenIco() {
   const [cantidad, setCantidad] = useState<number>(0);
 
   return (
-    <div className="fixed bottom-3 right-4 animate-bounce" onClick={toggle}>
+    <div className="fixed bottom-3 right-4 animate-bounce cursor-pointer" onClick={toggle}>
       <span className="bg-green-600 text-sm text-gray-50 absolute z-[2] bottom-14 right-0 px-2 py-0.5 rounded-full">
         {cantidad}
       </span>
