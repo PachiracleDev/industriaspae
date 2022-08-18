@@ -1,0 +1,12 @@
+create table ordenesxd(
+   id INT NOT NULL AUTO_INCREMENT,
+   fullname VARCHAR(100) NOT NULL,
+   dni VARCHAR(40) NOT NULL,
+   celular VARCHAR(30) NOT NULL,
+   pais VARCHAR(50) NOT NULL,
+   provincia VARCHAR(50) NOT NULL,
+   ciudad VARCHAR(40) NOT NULL,
+   orden JSON NOT NULL,
+   date DATE,
+   PRIMARY KEY ( id )
+);
