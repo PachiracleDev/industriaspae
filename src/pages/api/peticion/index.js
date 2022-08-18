@@ -7,7 +7,7 @@ export default function handler(req, res) {
 
     const orden = JSON.stringify(ordenFull);
     pool.query(
-      "INSERT INTO ordenes SET ?",
+      "INSERT INTO ordenesxd SET ?",
       { fullname, dni, celular, pais, provincia, ciudad, orden },
       (err, results) => {
         if (err) {
