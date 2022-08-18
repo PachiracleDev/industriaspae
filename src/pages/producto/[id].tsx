@@ -128,7 +128,7 @@ function Producto() {
 
             <div className="my-12 flex flex-col gap-3 w-11/12 mx-auto items-center justify-center">
               <h2 className="text-2xl text-gray-700 font-bold">Artesanías parecidas</h2>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap w-11/12 mx-auto gap-4 justify-center">
                 {productosparecidos && productosparecidos.map((producto: any) => (
                   <div key={producto.id}>
                     <Card {...producto} key={producto.id} />
