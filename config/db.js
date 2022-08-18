@@ -2,16 +2,15 @@ require("dotenv").config();
 
 import { createPool } from "mysql2/promise";
 
-const { MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE } = process.env;
+const { MYSQLHOST, MYSQLUSER, MYSQLPASSWORD, MYSQLDATABASE, MYSQLPORT } =
+  process.env;
 
 const pool = createPool({
-  host: MYSQL_HOST,
-  user: MYSQL_USER,
-  password: MYSQL_PASSWORD,
-  database: MYSQL_DATABASE,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  host: MYSQLHOST,
+  user: MYSQLUSER,
+  password: MYSQLPASSWORD,
+  database: MYSQLDATABASE,
+  port: MYSQLPORT,
 });
 
 export default pool;
