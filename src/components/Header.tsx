@@ -15,10 +15,10 @@ function Header() {
   const { bars, toggleBars } = useBars();
 
   return (
-    <div className="sticky top-0 bg-white z-10">
+    <div className="sticky top-0 bg-white z-30">
       <div className="border flex justify-between w-full gap-3 panel">
         <Logo />
-        <div className="flex items-center p-4 md:hidden">
+        <div className="flex items-center p-2 md:hidden cursor-pointer">
           {bars ? (
             <GrClose className="w-8 h-8 text-gray-900" onClick={toggleBars} />
           ) : (
@@ -47,7 +47,7 @@ function Header() {
         </div>
       </div>
       <div
-        className={`absolute top-[66px] z-10 w-full hidden ${bars && "active-bar"
+        className={`absolute top-[56px] z-30 w-full hidden ${bars && "active-bar"
           }`}
       >
         <div className="flex flex-col w-full text-gray-500 md:hidden">

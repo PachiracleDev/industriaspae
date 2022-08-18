@@ -28,7 +28,7 @@ export default function Search(props: any) {
     placeholder: 'Buscar artesanías',
     onStateChange: ({ state }: any) => setAutocompleteState(state),
     getSources: () => [{
-      sourceId: 'offers-next-api',
+      sourceId: 'industriaspae',
       getItems: ({ query }: any) => {
         if (!!query) {
           const results = productos.filter((product) => {
@@ -56,8 +56,8 @@ export default function Search(props: any) {
   })
 
   return (
-    <form ref={formRef} className="flex justify-center shadow-md sticky top-[55px] z-10 panel" {...formProps}>
-      <div className="flex p-1 sticky top-0 w-11/12">
+    <form ref={formRef} className="flex justify-center shadow-md sticky top-[56px] bg-white z-10 " {...formProps}>
+      <div className="flex p-1 pt-2 sticky top-0 w-11/12">
         <input ref={inputRef} className='flex-1 p-2 pl-4 w-full outline-none border rounded-full' {...inputProps} />
         {
           autocompleteState.isOpen && (
