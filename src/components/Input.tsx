@@ -16,8 +16,13 @@ function Input({ productoEncontrado }: any) {
 
   const addToCartHandler = (product: IProduct, cantidad: number) => {
     if (cantidad >= 25) {
+
+
+
       const existItem = state.cart.cartItems.find((x) => x.id === product.id);
+
       const quantity = existItem ? existItem.quantity + cantidad : cantidad;
+
 
       dispatch({
         type: actionTypes.CART_ADD_ITEM,
@@ -34,7 +39,7 @@ function Input({ productoEncontrado }: any) {
       return MySwal.fire({
         icon: "error",
         title: "Oops...",
-        html: "<b>La cantidad debe ser mayor a 25</b>",
+        html: "<b>La cantidad mínima es 25 unidades</b>",
         confirmButtonText: "Ok",
         confirmButtonColor: "#f43f5e"
       });

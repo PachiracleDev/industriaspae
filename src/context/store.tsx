@@ -47,13 +47,17 @@ const reducer = (state = initialState, action: Actions): StateType => {
       return { ...state, darkMode: false };
     case actionTypes.CART_ADD_ITEM: {
       const newItem = action.payload as IProduct;
+
       const existItem = state.cart.cartItems.find(
         (item) => item.id === newItem.id
       );
+      //Ver si la cantidad es mayor a 25 o mayor a 100
+
+
       const cartItems = existItem
         ? state.cart.cartItems.map((item) =>
-            item.name === existItem.name ? newItem : item
-          )
+          item.name === existItem.name ? newItem : item
+        )
         : [...state.cart.cartItems, newItem];
       Cookies.set("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };

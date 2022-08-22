@@ -5,6 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/gongian/image/upload/v1660796243/imagenes/logoico_p3migu.jpg" />
+        <meta charSet="utf-8" />
       </Head>
       <body>
         <Main />

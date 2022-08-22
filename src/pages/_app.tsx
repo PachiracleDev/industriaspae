@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import type { AppProps } from "next/app";
 import { StoreProvider } from "../context/store";
 import Buscador from "../components/Buscador";
-
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -29,7 +29,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Banner size="xs-large" className="z-20 bg-gradient-to-r from-neutral-900 to-zinc-700" fullWidth={true}>
         Por la compra de más de 200 Artesanías, recibe un folleto publicitario gratis.
       </Banner>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TXYSVB0BMX" ></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {
+          `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-TXYSVB0BMX');
+        `
+        }
 
+      </Script>
       <Header />
       <Buscador />
       <Component {...pageProps} />
