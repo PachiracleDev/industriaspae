@@ -62,18 +62,20 @@ function Producto() {
 
                   </div>
                 </div>
-                <div className="w-11/12 mx-auto flex flex-col items-center justify-center gap-2">
+                <div className="w-11/12 mx-auto flex justify-center gap-3">
                   <div className="flex gap-4 items-center">
                     <span className="text-green-600 lg:text-xl whitespace-nowrap">
                       S/ {productoEncontrado.price}
                     </span>
-                    <p>Orden Min: <span className="text-green-600 lg:text-xl whitespace-nowrap">100</span></p>
+                    <span className="text-gray-300 line-through text-sm lg:text-xl whitespace-nowrap">
+                      S/ {(productoEncontrado.price * 1.3).toFixed(2)}
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-yellow-600 lg:text-xl whitespace-nowrap">
-                      S/ {(productoEncontrado.price * 1.1).toFixed(2)}
+                    <span className="text-md whitespace-nowrap">
+                      Cantidad mínima:
                     </span>
-                    <p>Orden Min: <span className="text-yellow-600 lg:text-xl whitespace-nowrap">25</span></p>
+                    <span className="text-yellow-600"> 25</span>
                   </div>
                 </div>
                 <Input productoEncontrado={productoEncontrado} />
