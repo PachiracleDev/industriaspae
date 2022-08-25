@@ -10,8 +10,10 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens,
+    },
   },
-  screens,
+
   plugins: [],
 };
