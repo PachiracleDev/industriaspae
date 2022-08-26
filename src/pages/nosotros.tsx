@@ -13,7 +13,7 @@ function nosotros() {
     <Banner
       size="xl"
       title="Nosotros"
-      subtitle="Más de 20 años en el mercado"
+      description="Más de 20 años en el mercado"
       image="https://res.cloudinary.com/gongian/image/upload/v1660796243/imagenes/nosotros1_f3zait.jpg"
       imageAlt="Industrias PAE"
       fullWidth={true}

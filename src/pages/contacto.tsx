@@ -11,7 +11,7 @@ function contacto() {
     <Banner
       size="xl"
       title="Contacto"
-      subtitle="Encantados en contactarnos"
+      description="Encantados en contactarnos"
       image="https://res.cloudinary.com/gongian/image/upload/v1660796243/imagenes/contacto_y4vdxh.jpg"
       imageAlt="Industria Pae"
       fullWidth={true}

@@ -8,7 +8,7 @@ function FilterHeader() {
       <Banner
         size="xl"
         title="Catálogo"
-        subtitle="Ofreciendo la mejor calidad del mercado, al mejor precio"
+        description="Ofreciendo la mejor calidad del mercado, al mejor precio"
         image="https://res.cloudinary.com/gongian/image/upload/v1660796243/imagenes/portada-catalogo_wqohsl.jpg"
         imageAlt="Arbolito de huayruro"
         fullWidth={true}
