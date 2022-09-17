@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       </Head>
       <Banner size="xs-large" className="z-20 bg-gradient-to-r from-neutral-900 to-zinc-700" fullWidth={true}>
-        Canjee su obsequio misterioso con el código de su bonsái <NextLink href="/misterio" className="text-white underline font-bold text-blue-"><span>¡Aquí!</span></NextLink>
+        Mire nuestro catálogo dandole clic <NextLink href="/catalogo" className="text-white underline font-bold text-blue-"><span>¡Aquí!</span></NextLink>
       </Banner>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TXYSVB0BMX" ></Script>
       <Script id="google-analytics" strategy="afterInteractive">
