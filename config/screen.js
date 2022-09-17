@@ -5,4 +5,4 @@ const screens = {
   "cannot-hover": { raw: "(any-hover: none)" },
 };
 
-module.exports = screens;
+export default screens;

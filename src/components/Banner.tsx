@@ -71,6 +71,7 @@ export function Banner({
             'h-44 laptop:h-56': size === 'l',
 
             'h-[400px] laptop:h-96': size === 'xl',
+            'h[250px] laptop:h-72': size === 'xl' && fullWidth === false,
           },
           className
         )}
@@ -150,13 +151,17 @@ export function Banner({
           </header>
         )}
 
-        {children}
+        <div className='div-container-children-banner'>
+          {children}
+        </div>
+
+
       </Wrapper>
 
       {description && (
         <p
           className={classNames(
-            'block mt-4 font-light text-gray-900 laptop:hidden',
+            'block mt-4 mx-auto font-light text-gray-900 laptop:hidden',
             classNameDescription
           )}
           dangerouslySetInnerHTML={{ __html: description }}

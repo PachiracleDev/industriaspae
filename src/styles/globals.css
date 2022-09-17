@@ -31,19 +31,15 @@ html {
 }
 .panel {
   background-image: linear-gradient(180deg, #fff, #f5f5fa);
-  --text-opacity: 1;
-  color: #484c7a;
-  color: rgba(72, 76, 122, var(--text-opacity));
-  border-radius: 4px;
+}
+.panel-bg {
+  background-image: linear-gradient(180deg, #fff, #f5f5fa);
 }
 .activo-filtro {
   display: block;
 }
 .panel-footer {
   background-image: linear-gradient(180deg, #fff, #f5f5fa);
-  --text-opacity: 1;
-  color: #484c7a;
-  color: rgba(72, 76, 122, var(--text-opacity));
 }
 .active-filter {
   display: flex;
@@ -59,4 +55,57 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+.texto-degradate {
+  background: -webkit-linear-gradient(rgb(6 182 212), rgb(2 132 199));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: tomato;
+}
+
+.texto-degrate2 {
+  background: -webkit-linear-gradient(rgb(147 51 234), rgb(236 72 153));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: tomato;
+}
+@layer utilities {
+  .BarPanel {
+    @apply flex flex-col panel-bg  text-gray-700 items-start z-[9000] fixed w-[65%] h-full top-0 right-0 overflow-y-auto transition-all ease-out duration-500 translate-x-[105%];
+
+    /* Laptop */
+    @apply lg:bg-none lg:shadow-none lg:z-auto lg:flex-shrink-0 lg:sticky lg:w-0 lg:h-screen lg:top-[15rem] lg:right-auto lg:overflow-y-hidden lg:transform-none lg:opacity-0 lg:hidden;
+  }
+  .BarPanelExpanded {
+    @apply translate-x-0 lg:transform-none;
+  }
+
+  .FilterModal {
+    @apply flex flex-col panel-bg text-gray-700 items-start z-[9000] fixed w-[85%] lg:w-[25%] h-full top-0 right-0 overflow-y-auto transition-all ease-out duration-500 translate-x-[105%];
+  }
+  .FilterModalExpanded {
+    @apply translate-x-0;
+  }
+  .TiendaModal {
+    @apply flex-col panel-bg text-gray-700 z-[9000] fixed w-full h-full lg:w-[1200px] lg:h-[600px] lg:mt-[-300px] lg:ml-[-600px]    top-0 lg:left-1/2 lg:top-1/2 transition-opacity ease-out duration-500 opacity-0 hidden;
+  }
+  .TiendaModalExpanded {
+    @apply flex opacity-100;
+  }
+  .div-container-children-banner span {
+    @apply font-bold text-blue-400 underline cursor-pointer;
+  }
+}
+
+.flex {
+  display: flex;
+}
+.block {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.opacity100 {
+  opacity: 1;
 }

@@ -7,25 +7,69 @@ import { FaBars, FaTiktok } from "react-icons/fa";
 import { MdGroups } from "react-icons/md";
 import { ImList } from "react-icons/im";
 import { GrClose } from "react-icons/gr";
-import { BsFacebook, BsInstagram, BsYoutube, BsMailbox, BsWhatsapp } from "react-icons/bs";
+import { BsFacebook, BsGiftFill, BsInstagram, BsYoutube, BsMailbox, BsWhatsapp, BsShopWindow } from "react-icons/bs";
 import useBars from "../hooks/useBars";
 import Logo from "./Logo";
+import {
+  BsHandbag,
+  BsList,
+  BsPerson,
+  BsGift,
+  BsFillTagsFill,
+} from "react-icons/bs";
+import { useUpdateAtom } from "jotai/utils";
+import { barPanelExpandedAtom } from "./BarModal";
 
 function Header() {
-  const { bars, toggleBars } = useBars();
 
+  const updateBarExpanded = useUpdateAtom(barPanelExpandedAtom);
   return (
-    <div className="sticky top-0 bg-white z-30">
+    <div className="sticky top-0 panel z-30">
       <div className="border flex justify-between w-full gap-3 panel">
         <Logo />
-        <div className="flex items-center p-2 md:hidden cursor-pointer">
-          {bars ? (
-            <GrClose className="w-8 h-8 text-gray-900" onClick={toggleBars} />
-          ) : (
-            <FaBars className="w-8 h-8 text-gray-900" onClick={toggleBars} />
-          )}
+        <div className="flex items-center px-4 md:hidden cursor-pointer gap-6 text-gray-700">
+          {/* <NextLink href="/misterio">
+            <div className="flex flex-col items-center justify-center">
+              <BsGiftFill
+                size={25}
+                className="cursor-pointer"
+              />
+              <span className="text-xs ">Misterio</span>
+
+            </div>
+          </NextLink> */}
+          <NextLink href="/tiendas-fisicas">
+            <div className="flex flex-col items-center justify-center">
+              <BsShopWindow
+                size={25}
+                className="cursor-pointer"
+              />
+              <span className="text-xs ">Tiendas</span>
+
+            </div>
+          </NextLink>
+          <div className="flex flex-col items-center justify-center">
+            <BsList
+              className="cursor-pointer"
+              onClick={() => updateBarExpanded(true)}
+              size={25}
+            />
+            <span className="text-xs ">Menu</span>
+          </div>
         </div>
-        <div className="hidden gap-5 md:flex items-center pt-1 pr-10 text-md">
+        <div className="hidden gap-8 md:flex items-center pt-1 pr-10 text-md text-gray-700  ">
+          {/* <NextLink href="/misterio">
+            <div className="flex gap-2 items-center cursor-pointer hover:text-gray-400 duration-300">
+              <BsGiftFill className="w-6 h-6" />
+              Misterio
+            </div>
+          </NextLink> */}
+          <NextLink href="/tiendas-fisicas">
+            <div className="flex gap-2 items-center cursor-pointer hover:text-gray-400 duration-300">
+              <BsShopWindow className="w-6 h-6" />
+              Tiendas
+            </div>
+          </NextLink>
           <NextLink href="/catalogo">
             <div className="flex gap-2 items-center cursor-pointer hover:text-gray-400 duration-300">
               <ImList className="w-5 h-5" />
@@ -46,7 +90,7 @@ function Header() {
           </NextLink>
         </div>
       </div>
-      <div
+      {/* <div
         className={`absolute top-[56px] z-30 w-full hidden ${bars && "active-bar"
           }`}
       >
@@ -88,7 +132,7 @@ function Header() {
             <BsYoutube className="w-6 h-6" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,8 +1,6 @@
 import { useState } from "react";
-import OrdenIco from "../../components/OrdenIco";
 import Filtrador from "../../components/Filtrador";
 import FilterHeader from "../../components/FilterHeader";
-
 import productosTotal from "../../products/products.json";
 
 function Catalogo() {
@@ -24,7 +22,7 @@ function Catalogo() {
       >
         Mostrar Más
       </button>
-      <OrdenIco />
+
     </div>
   );
 }

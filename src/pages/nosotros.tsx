@@ -1,6 +1,5 @@
 
 import { Banner } from "../components/Banner";
-import OrdenIco from "../components/OrdenIco";
 import Video from "../components/Video";
 
 
@@ -34,8 +33,6 @@ function nosotros() {
       <Video />
     </div>
 
-
-    <OrdenIco />
   </div>;
 }
 

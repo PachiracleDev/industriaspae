@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import OrdenIco from "../../components/OrdenIco";
+
 import { useRouter } from "next/router";
 import productos from "../../products/products.json";
 import Image from "next/image";
+import { motion } from "framer-motion"
 
-import Input from "../../components/Input";
-import Card from "../../components/Card";
+import InputTiendas from '../../components/InputTiendas'
 
 function Producto() {
   const router = useRouter();
@@ -51,18 +51,20 @@ function Producto() {
                 <h2 className="text-2xl text-gray-700 text-center p-2 font-bold">
                   {productoEncontrado.name}
                 </h2>
-                <div className="flex flex-col gap-2 max-h-[500px] max-w-[500px] mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5, x: 100 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                  layoutId={productoEncontrado.id}
+                  className="flex flex-col gap-2 max-h-[500px] max-w-[500px] mx-auto">
                   <Image
                     src={productoEncontrado.image}
                     alt={productoEncontrado.name}
                     width={500}
                     height={500}
                   />
-                  <div>
-
-                  </div>
-                </div>
-                <div className="w-11/12 mx-auto flex justify-center gap-3">
+                </motion.div>
+                {/* <div className="w-11/12 mx-auto flex justify-center gap-3">
                   <div className="flex gap-4 items-center">
                     <span className="text-green-600 lg:text-xl whitespace-nowrap">
                       S/ {productoEncontrado.price}
@@ -78,7 +80,11 @@ function Producto() {
                     <span className="text-yellow-600"> 25</span>
                   </div>
                 </div>
-                <Input productoEncontrado={productoEncontrado} />
+                <Input productoEncontrado={productoEncontrado} /> */}
+                <div className="text-center">
+                  <span className="text-lg font-bold text-gray-700">Encuentralo en tu tienda más cercana</span>
+                  <InputTiendas />
+                </div>
               </div>
 
               <div className="w-11/12 border mx-auto p-3 lg:w-1/3">
@@ -126,23 +132,14 @@ function Producto() {
               </div>
             </div>
 
-            <div className="my-12 flex flex-col gap-3 w-11/12 mx-auto items-center justify-center">
-              <h2 className="text-2xl text-gray-700 font-bold">Artesanías parecidas</h2>
-              <div className="flex flex-wrap w-11/12 mx-auto gap-4 justify-center">
-                {productosparecidos && productosparecidos.map((producto: any) => (
-                  <div key={producto.id}>
-                    <Card {...producto} key={producto.id} />
-                  </div>
-                ))}
-              </div>
-            </div>
 
           </>
         ) : (
-          <div>Producto no encontrado</div>
+          <div className="grid content-center justify-center text-3xl text-gray-700 text-center h-[600px]">
+            Producto no encontrado 😪
+          </div>
         )}
       </div>
-      <OrdenIco />
     </div>
   );
 }

@@ -4,9 +4,18 @@ import Header from "../components/Header";
 import { Banner } from "../components/Banner";
 import Footer from "../components/Footer";
 import type { AppProps } from "next/app";
+import NextLink from "next/link";
 import { StoreProvider } from "../context/store";
 import Buscador from "../components/Buscador";
 import Script from "next/script";
+import { ToastContainer } from 'react-toastify';
+import Overlay from "../components/Overlay";
+import BarModal from "../components/BarModal";
+import OverlayFilter from "../components/OverlayFilter";
+import FilterModal from "../components/FilterModal";
+import OverlayTienda from "../components/OverlayTienda";
+import TiendaModal from "../components/TiendaModal";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -27,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       </Head>
       <Banner size="xs-large" className="z-20 bg-gradient-to-r from-neutral-900 to-zinc-700" fullWidth={true}>
-        Por la compra de más de 200 Artesanías, recibe un folleto publicitario gratis.
+        Canjee su obsequio misterioso con el código de su bonsái <NextLink href="/misterio" className="text-white underline font-bold text-blue-"><span>¡Aquí!</span></NextLink>
       </Banner>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TXYSVB0BMX" ></Script>
       <Script id="google-analytics" strategy="afterInteractive">
@@ -47,6 +56,22 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Footer />
 
+      <Overlay />
+      <BarModal />
+
+      <OverlayTienda />
+      <TiendaModal />
+
+      <OverlayFilter />
+      <FilterModal />
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        draggable
+        pauseOnHover
+        pauseOnFocusLoss
+      />
     </StoreProvider>
   );
 }

@@ -4,7 +4,6 @@ import { Banner } from "../components/Banner";
 
 import { BsFacebook, BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
-import OrdenIco from "../components/OrdenIco";
 function contacto() {
   return <div className="min-h-[650px] text-center">
 
@@ -41,7 +40,7 @@ function contacto() {
           <p>Industrias PAE</p>
         </div>
       </div>
-      <OrdenIco />
+
     </div>
   </div>;
 }

@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import { Banner } from "../components/Banner";
+
 import Main from "../components/Main";
-import OrdenIco from "../components/OrdenIco";
+
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +18,8 @@ const Home: NextPage = () => {
         classNameTitle="text-3xl font-normal tracking-wider leading-tight laptop:text-7xl"
       />
       <Main />
-      <OrdenIco />
+
+
     </div>
   );
 };
